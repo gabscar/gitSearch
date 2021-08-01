@@ -25,7 +25,7 @@ Entradas do método (3,a), Resultado do método: ['a', 'a', 'a']
 
 ## Questão 2:
 
-* Implemente um método que inverta um array, não utilize métodos nativos do array.<br>
+*Implemente um método que inverta um array, não utilize métodos nativos do array.<br>
 Entrada do método ([1,2,3,4]), Resultado do método: [4,3,2,1]
 
     var q2 = reverseArray([1,2,3])
@@ -58,7 +58,7 @@ Entrada do método ([1,2,3,4]), Resultado do método: [4,3,2,1]
 ## Questão 3:
 
 
-* Implemente um método que limpe os itens desnecessários de um array (false, undefined, strings vazias, zero, null).<br>
+*Implemente um método que limpe os itens desnecessários de um array (false, undefined, strings vazias, zero, null).<br>
 Entrada do método ([1,2,'', undefined]), Resultado do método: [1,2]
 
 
@@ -83,7 +83,7 @@ Entrada do método ([1,2,'', undefined]), Resultado do método: [1,2]
     }
 
 ## Questão 4:
-* Implemente um método que a partir de um array de arrays, converta em um objeto com chave e valor.<br>
+*Implemente um método que a partir de um array de arrays, converta em um objeto com chave e valor.<br>
 Entrada do método ([["c",2],["d",4]]), Resultado do métdodo: {c:2, d:4}
 
     var q4 = convertObject([["c",2],["d",4]])
@@ -105,7 +105,7 @@ Entrada do método ([["c",2],["d",4]]), Resultado do métdodo: {c:2, d:4}
 
 
 ## Questão 5:
-* Implemente um método que retorne um array, sem os itens passados por parâmetro depois do array de entrada.
+*Implemente um método que retorne um array, sem os itens passados por parâmetro depois do array de entrada.
 Entrada do método ([5,4,3,2,5], 5,3), Resultado do método: [4,2]
 
     var q5 =removeItem([5,4,3,2,5], 5,3)
@@ -134,9 +134,10 @@ Entrada do método ([5,4,3,2,5], 5,3), Resultado do método: [4,2]
 
 
 ## Questão 6:
-* Implemente um método que retorne um array, sem valores duplicados.<br>
+*Implemente um método que retorne um array, sem valores duplicados.<br>
 Entrada do método ([1,2,3,3,2,4,5,4,7,3]), Resultado do método: [1,2,3,4,5,7]
-var q6 = notDuplicated([1,2,3,3,2,4,5,4,7,3])
+
+    var q6 = notDuplicated([1,2,3,3,2,4,5,4,7,3])
 
     function notDuplicated(arr){
     
@@ -164,7 +165,7 @@ var q6 = notDuplicated([1,2,3,3,2,4,5,4,7,3])
 
 
 ## Questão 7:
-* Implemente um método que compare a igualdade de dois arrays e retorne um valor booleano.<br>
+*Implemente um método que compare a igualdade de dois arrays e retorne um valor booleano.<br>
 Entrada do método ([1,2,3,4],[1,2,3,4]), Resultado do método: true
 
     var q7 = intersectionArr([1,2,3,4],[1,2,3,4])
@@ -199,7 +200,7 @@ Entrada do método ([1,2,3,4],[1,2,3,4]), Resultado do método: true
 
 
 ## Questão 8:
-* Implemente um método que remova os aninhamentos de um array de arrays para um array unico.<br>
+*Implemente um método que remova os aninhamentos de um array de arrays para um array unico.<br>
 Entrada do método ([1, 2, [3], [4, 5]]), Resultado do método: [1, 2, 3, 4, 5] 
 
 
@@ -224,7 +225,7 @@ Entrada do método ([1, 2, [3], [4, 5]]), Resultado do método: [1, 2, 3, 4, 5]
 
 ## Questão 9:
 
-* Implemente um método divida um array por uma quantidade passada por parâmetro.<br>
+*Implemente um método divida um array por uma quantidade passada por parâmetro.<br>
 Entrada do método ([1, 2, 3, 4, 5], 2), Resultado do método: [[1, 2], [3, 4], [5]]
 
     var q9=shareFor([1, 2, 3, 4, 5], 2)
@@ -251,7 +252,7 @@ Entrada do método ([1, 2, 3, 4, 5], 2), Resultado do método: [[1, 2], [3, 4], 
     }
 
 ## Questão 10:
-* Implemente um método que encontre os valores comuns entre dois arrays.<br>
+*Implemente um método que encontre os valores comuns entre dois arrays.<br>
 Entrada do método ([6, 8], [8, 9]), Resultado do método: [8]
 
 
