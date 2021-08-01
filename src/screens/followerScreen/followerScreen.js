@@ -61,9 +61,6 @@ export default function followerScreen({navigation}){
                        
                         <CardUser name = {item.login} avatar = {item.avatar_url} requestUser={requestUser}/>
                     ))
-                    
-                    
-                    
                     }
                     
 

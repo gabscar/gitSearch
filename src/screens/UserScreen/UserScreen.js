@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Avatar, Divider } from 'react-native-elements';
-import { SafeAreaView } from 'react-native'
+
 import { ScrollView,BorderlessButton } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadRepo } from '../../services/api';
 
+import { Icon } from 'react-native-elements'
 import { ReducerActions } from '../../store/reducers/reducer';
 
 
@@ -47,7 +46,7 @@ export default function userScreen({navigation}){
        setLocation(reducer.data.location)
     },[load, navigation])
 
-    function buttonPress(){
+   async function buttonPress(){
         dispatch(ReducerActions.logout())
         console.log(reducer.user)
        navigation.navigate('search')
@@ -58,9 +57,7 @@ export default function userScreen({navigation}){
        
         <UserHome        
             user = {user}       
-            nameIcon ='log-out'
-            buttonLabel='Sair'
-            colorIcon='#CF3434'
+            
             avatar={avatar}
             name = {name}
             email={email}
@@ -70,9 +67,57 @@ export default function userScreen({navigation}){
             repos={repos}
             bio = {bio}
             button = {buttonPress}
+            chield={
+                <View style={styles.headerContainer}>
+                        <Text style={styles.headerName}>#{user}</Text>
+                        <View>
+                        <BorderlessButton 
+                            onPress={buttonPress}
+                            style = {styles.button}
+                        >
+                            <Text style={styles.textButton}>Sair</Text>
+                            <Icon name = 'log-out' type='feather' color='#CF3434' size={19} style={styles.icon} />
+                        </BorderlessButton>
+                        </View>
+                    </View>
+            }
         
         />
       
     )
 }
 
+const styles = StyleSheet.create({
+    headerContainer:{
+        flexDirection:'row',
+        paddingBottom: 20,
+        alignItems:'flex-start',
+        justifyContent:'flex-start'
+    },
+    headerName:{ 
+        fontSize: 20,
+        marginTop:23, 
+        color:"#fff",
+        width:112,
+        marginLeft:11,
+        marginRight:164
+    },
+    button:{
+        marginTop:25,
+        flexDirection:'row',
+        width:59,
+        height:20,
+        alignItems:'flex-start', 
+        justifyContent:'flex-end' 
+    },
+    textButton:{ 
+        fontSize: 17, 
+        paddingBottom: 20, 
+        color:"#fff",
+        marginLeft:10
+    },
+    icon:{
+        marginLeft:12,
+        marginRight:29
+    }
+})

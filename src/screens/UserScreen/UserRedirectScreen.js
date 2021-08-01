@@ -1,22 +1,22 @@
 
-import React, {Component, useState,useEffect} from 'react';
-
-
-
-
+import React, { useState,useEffect} from 'react';
+import { Icon } from 'react-native-elements'
+import { useDispatch } from 'react-redux';
+import { ReducerActions } from '../../store/reducers/reducer';
+import AsyncStorage from '@react-native-community/async-storage';
+import {BorderlessButton } from 'react-native-gesture-handler';
+import {Text, View,StyleSheet } from 'react-native';
 
 import {api} from '../../services/api'
 import UserHome from '../../components/userHome';
-import { useSelector, useDispatch } from 'react-redux';
-import { ReducerActions } from '../../store/reducers/reducer';
-import AsyncStorage from '@react-native-community/async-storage';
+
 
 export default function userRedirectScreen({navigation}){
 
     const [data,setData]=useState([]);
     const dispatch = useDispatch();
 
-    async function buttonPress(){
+    async function SaveUser(){
         try{
             let user =data.login
             const response2 = await api.get(`/${user}/repos`)
@@ -31,9 +31,14 @@ export default function userRedirectScreen({navigation}){
             dispatch(ReducerActions.changeUser(user,data))
             navigation.navigate('Home')
         }catch{
+            console.log('erro ao salvar usuário')
 
         }
 
+    }
+    function handleGoBack() {
+        //navigation.goBack();
+        navigation.navigate('Home')
     }
     async function getUser(){
         try{
@@ -56,9 +61,6 @@ export default function userRedirectScreen({navigation}){
     return(
             <UserHome        
                 user = {data.login}       
-                nameIcon ='log-in'
-                colorIcon='#5CBC29'
-                buttonLabel='Salvar'
                 avatar={data.avatar_url}
                 name = {data.name}
                 email={data.email}
@@ -67,9 +69,59 @@ export default function userRedirectScreen({navigation}){
                 following={data.following}
                 repos={data.public_repos}
                 bio = {data.bio}
-                button = {buttonPress}
+                button = {SaveUser}
+                chield={
+                    <View style={styles.heatherContainer}>
+                        <BorderlessButton 
+                            onPress={handleGoBack}
+                            style = {{marginTop:25 }}
+                        >
+                        <Icon name = 'arrow-left' type='feather' color="#FFF" size={25} style={{marginLeft:17.5}} />
+                        </BorderlessButton>
+                            <Text style={styles.textName}>#{data.login}</Text>
+                            <BorderlessButton 
+                                onPress={SaveUser}
+                                style = {styles.button}
+                            >
+                                <Text style={styles.textButton}>Salvar</Text>
+                                <Icon name = 'log-in' type='feather' color='#5CBC29' size={19} style={{marginLeft:8,marginRight:11.4}} />
+                            </BorderlessButton>
+                        </View>
+                }
             
             />
         )
     
 }
+
+
+
+const styles = StyleSheet.create({
+    heatherContainer:{
+        flexDirection:'row',
+        paddingBottom: 20,
+        alignItems:'flex-start',
+        justifyContent:'flex-start'
+    },
+    textName:{ 
+        fontSize: 20,
+        marginTop:23, 
+        color:"#fff",
+        width:112,
+        marginLeft:96
+    },
+    button:{
+        marginTop:25,
+        flexDirection:'row',
+        width:59,
+        height:20,
+        marginLeft:38,
+        alignItems:'flex-start' 
+    },
+    textButton:{ 
+        fontSize: 17, 
+        paddingBottom: 20, 
+        color:"#fff"
+    }
+
+})

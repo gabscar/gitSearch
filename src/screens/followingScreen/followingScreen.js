@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Avatar, Divider } from 'react-native-elements';
+
 import { SafeAreaView } from 'react-native'
 import { ScrollView,BorderlessButton } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +8,9 @@ import { Icon } from 'react-native-elements'
 import CardUser from '../../components/cardUser';
 import {api} from '../../services/api'
 import AsyncStorage from '@react-native-community/async-storage';
+
+
+
 export default function followingScreen({navigation}){
 
     
@@ -20,7 +23,7 @@ export default function followingScreen({navigation}){
 
     const[following,setFollowing] = useState(reducer.data.following)
     function handleGoBack() {
-        //navigation.goBack();
+       
         navigation.navigate('Home')
     }
     const [load,setLoad] = useState(true)
@@ -61,12 +64,8 @@ export default function followingScreen({navigation}){
             <ScrollView style={styles.scrollRepo}>
                 <SafeAreaView style={styles.containerList}> 
                     {data.map((item,i) =>(
-                       
                         <CardUser name = {item.login} avatar = {item.avatar_url} requestUser={requestUser}/>
-                    ))
-                    
-                    
-                    
+                    ))       
                     }
                     
 

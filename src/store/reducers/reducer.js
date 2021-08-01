@@ -29,6 +29,7 @@ export const ReducerActions = {
         info: "Change the current user",
 				payload: '',
 			});
+      
 		};
 	},
   changeUser(user,data) {

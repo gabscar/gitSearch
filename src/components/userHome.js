@@ -1,20 +1,10 @@
 
 import React, {Component} from 'react';
-/* import { StyleSheet, Text, View } from 'react-native';
-import { Avatar, Divider } from 'react-native-elements';
-import { SafeAreaView } from 'react-native'
-import { ScrollView,BorderlessButton } from 'react-native-gesture-handler';
 
-import { Icon } from 'react-native-elements' */
 import { StyleSheet, Text, View } from 'react-native';
-import { Avatar, Divider } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 import { SafeAreaView } from 'react-native'
-import { ScrollView,BorderlessButton } from 'react-native-gesture-handler';
-
-
-import { Icon } from 'react-native-elements'
-import { Button } from 'react-native-elements/dist/buttons/Button';
-
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -33,16 +23,7 @@ export default class UserHome extends Component{
         return (
             <SafeAreaView style={styles.container}>
                 <View style={styles.pictureHeader}>
-                    <View style={{flexDirection:'row',paddingBottom: 20,alignItems:'flex-start',justifyContent:'flex-start'}}>
-                        <Text style={{ fontSize: 20,marginTop:23, color:"#fff",width:112}}>#{this.props.user}</Text>
-                        <BorderlessButton 
-                            onPress={this.props.button}
-                            style = {{marginTop:25,flexDirection:'row',width:59,height:20,marginLeft:164,alignItems:'flex-start', justifyContent:'flex-end' }}
-                        >
-                            <Text style={{ fontSize: 17, paddingBottom: 20, color:"#fff",marginLeft:10}}>{this.props.buttonLabel}</Text>
-                            <Icon name = {this.props.nameIcon} type='feather' color={this.props.colorIcon} size={19} style={{marginLeft:12,marginRight:29}} />
-                        </BorderlessButton>
-                    </View>
+                    {this.props.chield}
                     <Avatar size={125} containerStyle={{ backgroundColor: 'tomato' }}  rounded title={'min'} source={{
                         uri:this.props.avatar,
                     }}/>
@@ -50,23 +31,23 @@ export default class UserHome extends Component{
             <View style={styles.nameContainer}>
                 <View style = {{flexDirection:'row'}}>
                     <View style={styles.retangleName}/>
-                        <Text style={{ fontSize: 26, color:"#fff", fontWeight:'bold',fontFamily:'Helvetica Neue', marginLeft:14}}>{this.props.name}</Text>
+                        <Text style={styles.textName}>{this.props.name}</Text>
                     </View>
-                    <Text style={{ fontSize: 18, color:"#fff",fontFamily:'Helvetica Neue' }}>{this.props.email}</Text>
-                    <Text style={{ fontSize: 18, color:"#fff", fontFamily:'Helvetica Neue'}}>{this.props.location}</Text>
+                    <Text style={styles.subtext}>{this.props.email}</Text>
+                    <Text style={styles.subtext}>{this.props.location}</Text>
             </View>
             <View style={styles.valueContainer}>
                 <View style={styles.miniTab}>
-                    <Text style={{ fontSize: 40, color:"#fff", fontWeight:'bold',fontFamily:'Helvetica Neue'}}>{this.props.followers}</Text>
-                    <Text style={{ fontSize: 17, color:"#fff", fontFamily:'Helvetica Neue'}}>Seguidores</Text>
+                    <Text style={styles.textNumberMiniTab}>{this.props.followers}</Text>
+                    <Text style={styles.textLabelMiniTab}>Seguidores</Text>
                 </View>
                 <View style={styles.miniTab}>
-                    <Text style={{ fontSize: 40, color:"#fff", fontWeight:'bold',fontFamily:'Helvetica Neue'}}>{this.props.following}</Text>
-                    <Text style={{ fontSize: 17, color:"#fff", fontFamily:'Helvetica Neue'}}>Seguindo</Text>
+                    <Text style={styles.textNumberMiniTab}>{this.props.following}</Text>
+                    <Text style={styles.textLabelMiniTab}>Seguindo</Text>
                 </View>
                 <View style={styles.miniTab}>
-                    <Text style={{ fontSize: 40, color:"#fff", fontWeight:'bold',fontFamily:'Helvetica Neue'}}>{this.props.repos}</Text>
-                    <Text style={{ fontSize: 17, color:"#fff", fontFamily:'Helvetica Neue'}}>Repos</Text>
+                    <Text style={styles.textNumberMiniTab}>{this.props.repos}</Text>
+                    <Text style={styles.textLabelMiniTab}>Repos</Text>
                 </View>
                 
             </View>
@@ -74,9 +55,9 @@ export default class UserHome extends Component{
                 <ScrollView style={styles.bioContainer}>
                     <View style={{flexDirection:'row'}}>
                         <View style={styles.retangle}/>
-                        <Text style={{ fontSize: 26, color:"#fff", fontWeight:'bold',fontFamily:'Helvetica Neue', marginLeft:24}}>BIO</Text>
+                        <Text style={styles.textBio}>BIO</Text>
                     </View>
-                    <Text style={{ fontSize: 16, color:"#fff",fontFamily:'Helvetica Neue', padding:18, textAlign: 'justify', marginBottom:90 }}>
+                    <Text style={styles.textBioDescription}>
                         {this.props.bio}
                     </Text>
                 </ScrollView>
@@ -144,5 +125,44 @@ const styles = StyleSheet.create({
         flex: 1,
         height:'100%', 
         marginBottom:113
+    },
+    textNumberMiniTab:{
+         fontSize: 40, 
+         color:"#fff", 
+         fontWeight:'bold',
+         fontFamily:'Helvetica Neue'
+    },
+    textLabelMiniTab:{
+         fontSize: 17, 
+         color:"#fff", 
+         fontFamily:'Helvetica Neue'
+    },
+    textBio:{ 
+        fontSize: 26, 
+        color:"#fff", 
+        fontWeight:'bold',
+        fontFamily:'Helvetica Neue', 
+        marginLeft:24
+    },
+    textBioDescription:{ 
+        fontSize: 16, 
+        color:"#fff",
+        fontFamily:'Helvetica Neue', 
+        padding:18, 
+        textAlign: 'justify', 
+        marginBottom:90 
+    },
+    subtext:{ 
+        fontSize: 18, 
+        color:"#fff",
+        fontFamily:'Helvetica Neue' 
+    },
+    textName:{ 
+        fontSize: 26, 
+        color:"#fff", 
+        fontWeight:'bold',
+        fontFamily:'Helvetica Neue', 
+        marginLeft:14
     }
+    
   });
