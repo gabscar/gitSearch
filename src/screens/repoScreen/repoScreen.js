@@ -21,7 +21,14 @@ export default function repoScreen({navigation}){
         //navigation.goBack();
         navigation.navigate('Home')
     }
-    
+    const [load,setLoad] = useState(true)
+
+    useEffect(()=>{
+        
+         navigation.addListener('focus', ()=>{setLoad(!load)})
+         setRepos(reducer.data.public_repos);
+         setData(reducer.repos);
+    },[load, navigation])
   
     console.log('repos',reducer.repos)
 

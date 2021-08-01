@@ -1,34 +1,32 @@
 import React, {Component} from 'react';
 import { Image, StyleSheet, Text, View,Alert,TouchableOpacity } from 'react-native';
 
-
+import AsyncStorage from '@react-native-community/async-storage';
 import { Avatar, Divider } from 'react-native-elements';
 import { Icon } from 'react-native-elements'
 
-
+import {api} from '../services/api'
 
 export default class CardUser extends Component{
 
-    alert = (title, body) => {
-        Alert.alert(title, body, [{ text: "OK", onPress: () => {} }], {
-          cancelable: false
-        });
-      };
+    
 
     render(){
+        
+        const min=''
         return (
             <View style = {styles.container}>
                
                 <View style={styles.retangle}/>
 
-                <Avatar size={64} containerStyle={{ backgroundColor: 'tomato' ,marginLeft:15,paddingTop:0}}  rounded title={'min'} source={{
+                <Avatar size={64} containerStyle={{ backgroundColor: 'gray' ,marginLeft:15,paddingTop:0}}  rounded title={min} source={{
                         uri:this.props.avatar,
                 }}/>
                 
                
                 <Text style={styles.nameStyle}>#{this.props.name}</Text>
                  
-                <TouchableOpacity style={styles.arrow} onPress={()=>this.alert('o nome é : ' +this.props.name,) }>
+                <TouchableOpacity style={styles.arrow} onPress={()=>this.props.requestUser(this.props.name) }>
                         <Icon name = 'arrow-right' type='feather' color="#FFF" size={20}/>
                 </TouchableOpacity>
     

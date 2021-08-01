@@ -14,13 +14,18 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export default function Search({navigation}){
 
-    const [user, setuser] = useState("");
+    const [user, setUser] = useState("");
     const [data, setData] = useState([]);
     
 	const dispatch = useDispatch();
     const [errorMessage ,setError]=useState('');
 
-    
+    useEffect(()=>{
+        setUser('')
+       
+       
+   },[navigation])
+
     
 
     async function login(){       
@@ -100,7 +105,7 @@ export default function Search({navigation}){
                 labelStyle={styles.InputLabel}
                 placeholder='Usuário'
                 placeholderTextColor='#535353'               
-                onChangeText={user => setuser(user)}
+                onChangeText={user => setUser(user)}
                 defaultValue={user}
                 errorStyle={{ color: 'red' }}
                 errorMessage={errorMessage}

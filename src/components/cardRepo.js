@@ -5,7 +5,9 @@ import { Icon } from 'react-native-elements'
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default class CardRepo extends Component{
+	
     render(){
+		
 		return(
 			<View style={styles.card}>
 				

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Avatar, Divider } from 'react-native-elements';
 import { SafeAreaView } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView,BorderlessButton } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Icon } from 'react-native-elements'
 import CardUser from '../../components/cardUser';
-
+import {api} from '../../services/api'
+import AsyncStorage from '@react-native-community/async-storage';
 export default function followingScreen({navigation}){
 
     
@@ -18,20 +19,50 @@ export default function followingScreen({navigation}){
     const [data,setData] = useState(reducer.following);
 
     const[following,setFollowing] = useState(reducer.data.following)
-    
+    function handleGoBack() {
+        //navigation.goBack();
+        navigation.navigate('Home')
+    }
+    const [load,setLoad] = useState(true)
+
+    useEffect(()=>{
+        
+         navigation.addListener('focus', ()=>{setLoad(!load)})
+        setFollowing(reducer.data.following)
+        setData(reducer.following)
+    },[load, navigation])
+
+    async function requestUser(user){
+        try{ 
+            console.log(user)
+            const response = await api.get(`/${user}`)
+            await AsyncStorage.setItem('HomeRedirectData',JSON.stringify(response.data))
+            console.log(response.data)
+            navigation.navigate('HomeRedirect')
+            
+        }catch{
+            console.log('err')
+        }
+    }
   
     console.log('repos',reducer.following)
 
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Text style={{ fontSize: 20, paddingTop:31, color:"#fff" ,alignSelf:'center' }}>{following} Seguidores</Text>
+                <BorderlessButton 
+                    onPress={handleGoBack}
+                    style = {{marginTop:25 }}
+                >
+                <Icon name = 'arrow-left' type='feather' color="#FFF" size={25} style={{marginLeft:17.5}} />
+                </BorderlessButton>
+                <Text style={{ fontSize: 17, paddingTop:31, color:"#fff" ,alignSelf:'flex-start',marginLeft:90 }}> Seguindo {following} </Text>
             </View>
             <ScrollView style={styles.scrollRepo}>
                 <SafeAreaView style={styles.containerList}> 
                     {data.map((item,i) =>(
                        
-                        <CardUser name = {item.login} avatar = {item.avatar_url}/>
+                        <CardUser name = {item.login} avatar = {item.avatar_url} requestUser={requestUser}/>
                     ))
                     
                     
@@ -56,7 +87,8 @@ const styles = StyleSheet.create({
         width:'100%',
         backgroundColor:'#1F1F1F',
         alignItems:'center',  
-        height:68     
+        height:68,
+        flexDirection:'row'        
 
     },
     nameContainer:{

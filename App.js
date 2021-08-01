@@ -13,13 +13,22 @@ import repoScreen from './src/screens/repoScreen/repoScreen';
 import followerScreen from './src/screens/followerScreen/followerScreen';
 import  Icon  from 'react-native-vector-icons/Feather'
 import followingScreen from './src/screens/followingScreen/followingScreen';
+import userRedirectScreen from './src/screens/UserScreen/UserRedirectScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
 function Home() {
+  
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
+      tabBarButton: [
+        "HomeRedirect",        
+      ].includes(route.name)
+        ? () => {
+            return null;
+          }
+        : undefined,
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
 
@@ -74,7 +83,8 @@ function Home() {
       <Tab.Screen name="Home" component={userScreen} />      
       <Tab.Screen name="Repo" component={repoScreen} />      
       <Tab.Screen name="Seguidores" component={followerScreen} />      
-      <Tab.Screen name="Seguindo" component={followingScreen} />      
+      <Tab.Screen name="Seguindo" component={followingScreen} />   
+      <Tab.Screen name= "HomeRedirect" component = {userRedirectScreen}  options={{showTab:false}}/> 
     </Tab.Navigator>
   );
 }
@@ -93,10 +103,11 @@ export default function App() {
         }} >
           <Stack.Screen name="search" component={Search} options={{headerShown: false}}/>
           <Stack.Screen name= "Home" component = {Home} options={{headerShown: false}} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
- 
+
   );
 }
 
