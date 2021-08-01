@@ -66,6 +66,7 @@ export default function Search({navigation}){
     return(
         <View style={styles.container}>
             <Logo />
+            
             <TextInput
                 style={styles.Input}
                 placeholder='Usuário'
