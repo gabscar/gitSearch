@@ -29,7 +29,6 @@ Entradas do método (3,a), Resultado do método: ['a', 'a', 'a']
 Entrada do método ([1,2,3,4]), Resultado do método: [4,3,2,1]
 
     var q2 = reverseArray([1,2,3])
-
     function reverseArray(arr){
         if(typeof arr == 'object'){
             let length = arr.length;
