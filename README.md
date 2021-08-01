@@ -4,12 +4,7 @@
 
 <div  align ="center"> <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783188-5c0478af-fe5a-4b73-81ba-e44109d18491.jpeg">
         <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783230-f7c50762-0886-45b0-a5fc-ca1296a12b49.jpeg">
-<div>
-![perfil_seguidor]()
-
-
-
-
+</div>
 
 
 ## Sobre o aplicativo
@@ -21,14 +16,14 @@ deverá salvar o usuário selecionado para substituilo como o principal.
 <div  align ="center"> 
          <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783261-150d22d3-46c4-40fe-9349-5ec09194a73f.jpeg">
          <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783312-559399b1-f398-49d3-9574-02cb1cc3375d.jpeg">
-<div>
+</div>
 
 É possível ainda verificar todos os repositórios abertos do usuário atual.
 <div  align ="center"> 
          <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783372-2cb5f410-51e2-462c-840e-70678b634aa3.jpeg">
 
 
-<div>
+</div>
 
 
 ## Tecnologias e API
