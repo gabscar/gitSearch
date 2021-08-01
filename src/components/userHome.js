@@ -130,24 +130,24 @@ const styles = StyleSheet.create({
          fontSize: 40, 
          color:"#fff", 
          fontWeight:'bold',
-         fontFamily:'Helvetica Neue'
+         fontFamily:'sans-serif'
     },
     textLabelMiniTab:{
          fontSize: 17, 
          color:"#fff", 
-         fontFamily:'Helvetica Neue'
+         fontFamily:'sans-serif'
     },
     textBio:{ 
         fontSize: 26, 
         color:"#fff", 
         fontWeight:'bold',
-        fontFamily:'Helvetica Neue', 
+        fontFamily:'sans-serif', 
         marginLeft:24
     },
     textBioDescription:{ 
         fontSize: 16, 
         color:"#fff",
-        fontFamily:'Helvetica Neue', 
+        fontFamily:'sans-serif', 
         padding:18, 
         textAlign: 'justify', 
         marginBottom:90 
@@ -155,13 +155,13 @@ const styles = StyleSheet.create({
     subtext:{ 
         fontSize: 18, 
         color:"#fff",
-        fontFamily:'Helvetica Neue' 
+        fontFamily:'sans-serif' 
     },
     textName:{ 
         fontSize: 26, 
         color:"#fff", 
         fontWeight:'bold',
-        fontFamily:'Helvetica Neue', 
+        fontFamily:'sans-serif', 
         marginLeft:14
     }
     
