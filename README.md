@@ -2,22 +2,31 @@
 
 
 
+<div  align ="center"> <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783188-5c0478af-fe5a-4b73-81ba-e44109d18491.jpeg">
+        <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783230-f7c50762-0886-45b0-a5fc-ca1296a12b49.jpeg">
+<div>
+![perfil_seguidor]()
 
 
 
 
 
-##Sobre o aplicativo
+
+## Sobre o aplicativo
 
 Aplicativo de busca de perfis do github atáves do nome do usuário, nele você terá 
 a opção de trocar de usuário ao entrar nas abas de "Seguidores" ou "Seguindo" onde
 deverá salvar o usuário selecionado para substituilo como o principal.
+    
+<div  align ="center"> <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783312-559399b1-f398-49d3-9574-02cb1cc3375d.jpeg">
+         <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783261-150d22d3-46c4-40fe-9349-5ec09194a73f.jpeg">
+<div>
 
 É possível ainda verificar todos os repositórios abertos do usuário atual.
 
 
 
-##Tecnologias e API
+## Tecnologias e API
 
 Para desenvolvimento desse projeto foi utilizada a api disponibilizada pelo Git Hub [API](https://docs.github.com/en/rest).
 <p align="center">
@@ -32,6 +41,7 @@ Para desenvolvimento desse projeto foi utilizada a api disponibilizada pelo Git 
     <img  src="https://img.shields.io/badge/reacr--navigation-v5-green">
 </a>
 </p>
+
 
 
 ## Autor
