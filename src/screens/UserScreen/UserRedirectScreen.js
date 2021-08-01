@@ -3,7 +3,7 @@ import React, { useState,useEffect} from 'react';
 import { Icon } from 'react-native-elements'
 import { useDispatch } from 'react-redux';
 import { ReducerActions } from '../../store/reducers/reducer';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BorderlessButton } from 'react-native-gesture-handler';
 import {Text, View,StyleSheet } from 'react-native';
 

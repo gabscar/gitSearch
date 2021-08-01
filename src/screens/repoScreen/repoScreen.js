@@ -47,7 +47,7 @@ export default function repoScreen({navigation}){
                 <SafeAreaView style={styles.containerList}> 
                     {data.map((item,i) =>(
                     
-                        <CardRepo titulo={item.name} descricao = {item.description} stargazers_count={item.stargazers_count}/>
+                        <CardRepo key={i} titulo={item.name} descricao = {item.description} stargazers_count={item.stargazers_count}/>
                     ))
                     
                     

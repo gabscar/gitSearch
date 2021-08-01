@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Icon } from 'react-native-elements'
 import CardUser from '../../components/cardUser';
 import {api} from '../../services/api'
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function followerScreen({navigation}){
 
     
