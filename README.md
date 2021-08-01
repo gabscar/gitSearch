@@ -18,12 +18,17 @@ Aplicativo de busca de perfis do github atáves do nome do usuário, nele você 
 a opção de trocar de usuário ao entrar nas abas de "Seguidores" ou "Seguindo" onde
 deverá salvar o usuário selecionado para substituilo como o principal.
     
-<div  align ="center"> <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783312-559399b1-f398-49d3-9574-02cb1cc3375d.jpeg">
+<div  align ="center"> 
          <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783261-150d22d3-46c4-40fe-9349-5ec09194a73f.jpeg">
+         <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783312-559399b1-f398-49d3-9574-02cb1cc3375d.jpeg">
 <div>
 
 É possível ainda verificar todos os repositórios abertos do usuário atual.
+<div  align ="center"> 
+         <img width="220px" heigth="360px" src ="https://user-images.githubusercontent.com/57021668/127783372-2cb5f410-51e2-462c-840e-70678b634aa3.jpeg">
 
+
+<div>
 
 
 ## Tecnologias e API
